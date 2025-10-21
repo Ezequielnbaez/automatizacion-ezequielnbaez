@@ -2,6 +2,8 @@ from utils.selenium_func import escribir_text, click_elemento, obtener_texto
 from utils.config import BASE_URL
 from utils.data_utils import leer_usaurios
 from utils.driver_setup import setup_driver
+from selenium.common.exceptions import TimeoutException
+
 
 LOC_USER = ("id", "user-name")
 LOC_PASS = ("id", "password")
@@ -26,16 +28,19 @@ def test_login():
             click_elemento(driver, LOC_BTN_LOGIN)
 
             try: 
-                print("Usuario '{usuario['usuario']}' logro entrar")
+                print("Usuario logro entrar")
                 driver.get(BASE_URL)
                 #logra entrar y vuelve al principio
             
             except TimeoutError:
                 try:
                     error = obtener_texto(driver, LOC_ERROR_MSG)
-                    print("Usuario '{usuario['usuario']}' no logro entrar:{error}")
+                    print("Usuario no logro entrar:{error}")
                 except:
-                    print("Usuario '{usuario['usuario']}' no logro entrar:Error desconocido")
+                    print("Usuario no logro entrar:Error desconocido")
 
     finally:
         driver.quit()
+
+if __name__ == "__main__":
+    test_login()

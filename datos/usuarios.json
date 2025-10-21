@@ -1,6 +1,13 @@
 [
     {"usuario": "standard_user", "password": "secret_sauce"},
+
+    {"usuario": "fake_user2", "password": "pass2"},
+
     {"usuario": "locked_out_user", "password": "secret_sauce"},
+    
     {"usuario": "problem_user", "password": "secret_sauce"},
-    {"usuario": "performance_glitch_user", "password": "secret_sauce"}
+
+    {"usuario": "fake_user1", "password": "pass1"},
+
+    {"usuario": "fake_user3", "password": "pass3"}
 ]
