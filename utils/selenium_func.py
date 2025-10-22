@@ -22,6 +22,10 @@ def click_elemento(driver,locator):
     elemento.click()
     
 
-def obtener_texto(driver, locator):
-    elemento = esperar_visibilidad(driver, locator)
+def obtener_texto(driver, locator, tiempo=10):
+    elemento = esperar_visibilidad(driver, locator, tiempo)
     return elemento.text
+
+def obtener_elemento(driver, locator, tiempo=10):
+    esperar_visibilidad(driver, locator, tiempo)
+    return driver.find_elements(*locator)

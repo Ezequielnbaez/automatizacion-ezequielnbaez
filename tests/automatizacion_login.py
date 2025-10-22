@@ -10,11 +10,13 @@ LOC_PASS = ("id", "password")
 LOC_BTN_LOGIN = ("id", "login-button")
 LOC_ERROR_MSG = ("css selector", "h3[data-test='error']")
 LOC_PRODUCTOS = ("class name", "inventory_item")
+
+#Prueba todos los usuarios y contraseñas leídas en data_utils que saca datos de usuarios.json en carpeta Datos
 def test_login():
     usuarios=leer_usaurios()
     driver = setup_driver()
 
-    """Escribe texto y clickea login"""
+    #Escribe texto y clickea login
     try:
         driver.get(BASE_URL)
 
@@ -44,6 +46,8 @@ def test_login():
         print(f"Error general:{e}")
     finally:
         driver.quit()
+        print("Fin de prueba Automatización de Login")
+
 
 if __name__ == "__main__":
     test_login()
