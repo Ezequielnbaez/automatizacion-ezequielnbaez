@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -25,4 +24,4 @@ def click_elemento(driver,locator):
 
 def obtener_texto(driver, locator):
     elemento = esperar_visibilidad(driver, locator)
-    return elemento.tex
+    return elemento.text

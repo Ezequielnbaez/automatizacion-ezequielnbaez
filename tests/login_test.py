@@ -1,5 +1,5 @@
-from utils.selenium_func import escribir_text, click_elemento, obtener_texto
-from utils.config import BASE_URL
+from utils.selenium_func import escribir_text, click_elemento, obtener_texto, esperar_visibilidad
+from utils.config import BASE_URL, TIEMPO_DE_ESPERA
 from utils.data_utils import leer_usaurios
 from utils.driver_setup import setup_driver
 from selenium.common.exceptions import TimeoutException
@@ -9,6 +9,7 @@ LOC_USER = ("id", "user-name")
 LOC_PASS = ("id", "password")
 LOC_BTN_LOGIN = ("id", "login-button")
 LOC_ERROR_MSG = ("css selector", "h3[data-test='error']")
+LOC_PRODUCTOS = ("class name", "inventory_item")
 def test_login():
     usuarios=leer_usaurios()
     driver = setup_driver()
@@ -24,21 +25,23 @@ def test_login():
             
             #escribo nuevo
             escribir_text(driver, LOC_USER, usuario["usuario"])
-            escribir_text(driver, LOC_USER, usuario["password"])
+            escribir_text(driver, LOC_PASS, usuario["password"])
             click_elemento(driver, LOC_BTN_LOGIN)
 
             try: 
-                print("Usuario logro entrar")
+                esperar_visibilidad(driver, LOC_PRODUCTOS, TIEMPO_DE_ESPERA)
+                print(f"Usuario {usuario['usuario']} logro entrar")
                 driver.get(BASE_URL)
                 #logra entrar y vuelve al principio
             
-            except TimeoutError:
+            except TimeoutException:
                 try:
-                    error = obtener_texto(driver, LOC_ERROR_MSG)
-                    print("Usuario no logro entrar:{error}")
-                except:
-                    print("Usuario no logro entrar:Error desconocido")
-
+                    error1 = obtener_texto(driver, LOC_ERROR_MSG)
+                    print(f"Usuario {usuario['usuario']} no logro entrar:{error1}")
+                except Exception as e:
+                    print(f"Usuario {usuario['usuario']} no logro entrar:Error desconocido- {e}")
+    except Exception as e:
+        print(f"Error general:{e}")
     finally:
         driver.quit()
 
