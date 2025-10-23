@@ -12,7 +12,7 @@ Por último los reportes se guardan en carpeta reports.
 
 ---
 
-## 🧰 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 - **Python 3.x**
 - **Selenium WebDriver**
 - **WebDriver Manager**
@@ -21,7 +21,7 @@ Por último los reportes se guardan en carpeta reports.
 
 ---
 
-## ⚙️ Instalación de Dependencias
+## Instalación de Dependencias
 
 1. **Clonar el repositorio**
    git clone https:
@@ -34,6 +34,21 @@ Por último los reportes se guardan en carpeta reports.
 3. **Instalar dependencias**
    pip install -r requirements.txt
 
+
+## Generar Reporte HTML de Pruebas
+
+
+Test de todos los archivos:
+pytest tests/ -v --html=reporte_general.html
+
+Test automatizaci´pn de login:
+pytest tests/test_automatizacion_login.py -v --html=reporte.html
+
+Test navegación y verificación:
+pytest tests/test_navegacion_verificacion.py -v --html=reporte.html
+
+Test interacción de productos(test completo de todos los puntos, login, navegacion y carrito):
+pytest tests/test_interaccion_productos.py -v --html=reporte.html
 
 Ezequiel Báez
 Proyecto realizado como parte del curso de Automatización

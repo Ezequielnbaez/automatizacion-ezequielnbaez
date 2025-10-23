@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 def setup_driver(headless=False):
-    """Configuración de una instancia de chrome Webdrive"""
+    #configura webdriver para usarlos en otros códigos
 
     chrome_options=Options()
     if headless:
