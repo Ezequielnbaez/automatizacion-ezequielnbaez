@@ -38,18 +38,18 @@ Por último los reportes se guardan en carpeta reports.
 ## Generar Reporte HTML de Pruebas
 
 
-Test de todos los archivos:
+**Test de todos los archivos**:
 pytest tests/ -v --html=reporte_general.html
 
-Test automatizaci´pn de login:
+**Test automatizaci´pn de login**:
 pytest tests/test_automatizacion_login.py -v --html=reporte.html
 
-Test navegación y verificación:
+**Test navegación y verificación**:
 pytest tests/test_navegacion_verificacion.py -v --html=reporte.html
 
-Test interacción de productos(test completo de todos los puntos, login, navegacion y carrito):
+**Test interacción de productos(test completo de todos los puntos, login, navegacion y carrito)**:
 pytest tests/test_interaccion_productos.py -v --html=reporte.html
 
-Ezequiel Báez
+**Ezequiel Báez**
 Proyecto realizado como parte del curso de Automatización
 Año: 2025
