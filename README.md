@@ -25,13 +25,14 @@ Por último los reportes se guardan en carpeta reports.
 
 1. **Clonar el repositorio**
    git clone https://github.com/Ezequielnbaez/pre-entrega-automation-testing-ezequielbaez
-   cd automatizacion-saucedemo
 
-2. **Crear y activar un entorno virtual**
+   cd pre-entrega-automation-testing-ezequielbaez
+
+3. **Crear y activar un entorno virtual**
    python -m venv venv
    venv\Scripts\activate
 
-3. **Instalar dependencias**
+4. **Instalar dependencias**
    pip install -r requirements.txt
 
 
