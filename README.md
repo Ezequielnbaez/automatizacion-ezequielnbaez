@@ -24,7 +24,7 @@ Por último los reportes se guardan en carpeta reports.
 ## Instalación de Dependencias
 
 1. **Clonar el repositorio**
-   git clone https:
+   git clone https://github.com/Ezequielnbaez/pre-entrega-automation-testing-ezequielbaez
    cd automatizacion-saucedemo
 
 2. **Crear y activar un entorno virtual**
